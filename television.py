@@ -10,19 +10,22 @@ class Television:
         self.__volume = Television.MIN_VOLUME
         self.__channel = Television.MIN_CHANNEL
 
-    def power(self): # I did this part
+    def power(self):
+        # To turn the TV On/Off
         if self.__status == False:
             self.__status = True
         else:
             self.__status = False
 
-    def mute(self): # I did this part
+    def mute(self):
+        # To mute and unmute the TV
         if self.__muted == False:
             self.__muted = True
         else:
             self.__muted = False
 
-    def channel_up(self): # I did this part
+    def channel_up(self):
+        # To change the channel - up
         if self.__status:
             if self.__channel < Television.MAX_CHANNEL:
                 self.__channel += 1
@@ -30,6 +33,7 @@ class Television:
                 self.__channel = Television.MIN_CHANNEL
 
     def channel_down(self):
+        # To change the channel - down
         if self.__status:
             if self.__channel > Television.MIN_CHANNEL:
                 self.__channel -= 1
@@ -37,12 +41,14 @@ class Television:
                 self.__channel = Television.MIN_CHANNEL
 
     def volume_up(self):
+        # To increase the volume
         if self.__status:
             self.__muted = False
             if self.__volume < Television.MAX_VOLUME:
                 self.__volume += 1
 
     def volume_down(self):
+        # To decrease the volume
         if self.__status:
             self.__muted = False
             if self.__volume > Television.MIN_VOLUME:
